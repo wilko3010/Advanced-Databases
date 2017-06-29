@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FootballModelStoreContainer" CdmEntityContainer="FootballEntities">
+    <FunctionImportMapping FunctionImportName="Fixture_Get" FunctionName="FootballModel.Store.Fixture_Get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FootballModel.Fixture_Get_Result">
+          <ScalarProperty Name="Kick_Off" ColumnName="Kick-Off" />
+          <ScalarProperty Name="Home_Team" ColumnName="Home Team" />
+          <ScalarProperty Name="Home_Goals" ColumnName="Home Goals" />
+          <ScalarProperty Name="Away_Team" ColumnName="Away Team" />
+          <ScalarProperty Name="Away_Goals" ColumnName="Away Goals" />
+          <ScalarProperty Name="Winner" ColumnName="Winner" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Fixture_GetPlayersForFixture" FunctionName="FootballModel.Store.Fixture_GetPlayersForFixture">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FootballModel.Fixture_GetPlayersForFixture_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Shirt_Number" ColumnName="Shirt Number" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Set_Piece" ColumnName="Set Piece" />
+          <ScalarProperty Name="Team" ColumnName="Team" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Player_Delete" FunctionName="FootballModel.Store.Player_Delete" />
+    <FunctionImportMapping FunctionImportName="Player_Merge" FunctionName="FootballModel.Store.Player_Merge" />
+    <FunctionImportMapping FunctionImportName="Team_Delete" FunctionName="FootballModel.Store.Team_Delete" />
+    <FunctionImportMapping FunctionImportName="Team_Get" FunctionName="FootballModel.Store.Team_Get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FootballModel.Team_Get_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Manager" ColumnName="Manager" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Team_Merge" FunctionName="FootballModel.Store.Team_Merge" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,91 @@
+﻿@model FootballClass.Player
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Player</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShirtNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShirtNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FavouredFoot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FavouredFoot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PositionID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PositionID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RosterID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RosterID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SetPieceID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SetPieceID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deleted)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FootballModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="FootballEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="Fixture_Get" ReturnType="Collection(FootballModel.Fixture_Get_Result)">
+      <Parameter Name="FixtureID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Fixture_GetPlayersForFixture" ReturnType="Collection(FootballModel.Fixture_GetPlayersForFixture_Result)">
+      <Parameter Name="FixtureID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Player_Delete">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Player_Merge">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+      <Parameter Name="Firstname" Mode="In" Type="String" />
+      <Parameter Name="Surname" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="DateTime" />
+      <Parameter Name="ShirtNumber" Mode="In" Type="Int32" />
+      <Parameter Name="FavouredFoot" Mode="In" Type="String" />
+      <Parameter Name="PositionID" Mode="In" Type="Int32" />
+      <Parameter Name="RosterID" Mode="In" Type="Int32" />
+      <Parameter Name="SetPieceID" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Team_Delete">
+      <Parameter Name="TeamID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Team_Get" ReturnType="Collection(FootballModel.Team_Get_Result)">
+      <Parameter Name="TeamID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Team_Merge">
+      <Parameter Name="TeamID" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Fixture_Get_Result">
+    <Property Type="DateTime" Name="Kick_Off" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Home_Team" Nullable="false" />
+    <Property Type="Int32" Name="Home_Goals" Nullable="false" />
+    <Property Type="String" Name="Away_Team" Nullable="false" />
+    <Property Type="Int32" Name="Away_Goals" Nullable="false" />
+    <Property Type="String" Name="Winner" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Fixture_GetPlayersForFixture_Result">
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="41" />
+    <Property Type="Int32" Name="Shirt_Number" Nullable="false" />
+    <Property Type="String" Name="Position" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Set_Piece" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Team" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Team_Get_Result">
+    <Property Type="String" Name="Name" Nullable="false" />
+    <Property Type="String" Name="Manager" Nullable="false" MaxLength="25" />
+  </ComplexType>
+</Schema>

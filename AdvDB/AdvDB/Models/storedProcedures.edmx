@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FootballModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="Fixture_Get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FixtureID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Fixture_GetPlayersForFixture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FixtureID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Player_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PlayerID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Player_Merge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PlayerID" Type="int" Mode="In" />
+          <Parameter Name="Firstname" Type="nvarchar" Mode="In" />
+          <Parameter Name="Surname" Type="nvarchar" Mode="In" />
+          <Parameter Name="DOB" Type="date" Mode="In" />
+          <Parameter Name="ShirtNumber" Type="int" Mode="In" />
+          <Parameter Name="FavouredFoot" Type="nvarchar" Mode="In" />
+          <Parameter Name="PositionID" Type="int" Mode="In" />
+          <Parameter Name="RosterID" Type="int" Mode="In" />
+          <Parameter Name="SetPieceID" Type="int" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="Team_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TeamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Team_Get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TeamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Team_Merge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TeamID" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+        </Function>
+        <EntityContainer Name="FootballModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FootballModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FootballEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="Fixture_Get" ReturnType="Collection(FootballModel.Fixture_Get_Result)">
+            <Parameter Name="FixtureID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Fixture_GetPlayersForFixture" ReturnType="Collection(FootballModel.Fixture_GetPlayersForFixture_Result)">
+            <Parameter Name="FixtureID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Player_Delete">
+            <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Player_Merge">
+            <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+            <Parameter Name="Firstname" Mode="In" Type="String" />
+            <Parameter Name="Surname" Mode="In" Type="String" />
+            <Parameter Name="DOB" Mode="In" Type="DateTime" />
+            <Parameter Name="ShirtNumber" Mode="In" Type="Int32" />
+            <Parameter Name="FavouredFoot" Mode="In" Type="String" />
+            <Parameter Name="PositionID" Mode="In" Type="Int32" />
+            <Parameter Name="RosterID" Mode="In" Type="Int32" />
+            <Parameter Name="SetPieceID" Mode="In" Type="Int32" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="Team_Delete">
+            <Parameter Name="TeamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Team_Get" ReturnType="Collection(FootballModel.Team_Get_Result)">
+            <Parameter Name="TeamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Team_Merge">
+            <Parameter Name="TeamID" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Fixture_Get_Result">
+          <Property Type="DateTime" Name="Kick_Off" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Home_Team" Nullable="false" />
+          <Property Type="Int32" Name="Home_Goals" Nullable="false" />
+          <Property Type="String" Name="Away_Team" Nullable="false" />
+          <Property Type="Int32" Name="Away_Goals" Nullable="false" />
+          <Property Type="String" Name="Winner" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Fixture_GetPlayersForFixture_Result">
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="41" />
+          <Property Type="Int32" Name="Shirt_Number" Nullable="false" />
+          <Property Type="String" Name="Position" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Set_Piece" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Team" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Team_Get_Result">
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Manager" Nullable="false" MaxLength="25" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FootballModelStoreContainer" CdmEntityContainer="FootballEntities" >
+          <FunctionImportMapping FunctionImportName="Fixture_Get" FunctionName="FootballModel.Store.Fixture_Get">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FootballModel.Fixture_Get_Result">
+                <ScalarProperty Name="Kick_Off" ColumnName="Kick-Off" />
+                <ScalarProperty Name="Home_Team" ColumnName="Home Team" />
+                <ScalarProperty Name="Home_Goals" ColumnName="Home Goals" />
+                <ScalarProperty Name="Away_Team" ColumnName="Away Team" />
+                <ScalarProperty Name="Away_Goals" ColumnName="Away Goals" />
+                <ScalarProperty Name="Winner" ColumnName="Winner" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Fixture_GetPlayersForFixture" FunctionName="FootballModel.Store.Fixture_GetPlayersForFixture">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FootballModel.Fixture_GetPlayersForFixture_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Shirt_Number" ColumnName="Shirt Number" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Set_Piece" ColumnName="Set Piece" />
+                <ScalarProperty Name="Team" ColumnName="Team" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Player_Delete" FunctionName="FootballModel.Store.Player_Delete" />
+          <FunctionImportMapping FunctionImportName="Player_Merge" FunctionName="FootballModel.Store.Player_Merge" />
+          <FunctionImportMapping FunctionImportName="Team_Delete" FunctionName="FootballModel.Store.Team_Delete" />
+          <FunctionImportMapping FunctionImportName="Team_Get" FunctionName="FootballModel.Store.Team_Get">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FootballModel.Team_Get_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Manager" ColumnName="Manager" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Team_Merge" FunctionName="FootballModel.Store.Team_Merge" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

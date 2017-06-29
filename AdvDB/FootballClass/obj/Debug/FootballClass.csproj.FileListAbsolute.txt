@@ -1,0 +1,20 @@
+U:\Year 3\Advanced Database Systems\AdvDB\FootballClass\bin\Debug\FootballClass.dll.config
+U:\Year 3\Advanced Database Systems\AdvDB\FootballClass\bin\Debug\FootballClass.dll
+U:\Year 3\Advanced Database Systems\AdvDB\FootballClass\bin\Debug\FootballClass.pdb
+U:\Year 3\Advanced Database Systems\AdvDB\FootballClass\bin\Debug\EntityFramework.dll
+U:\Year 3\Advanced Database Systems\AdvDB\FootballClass\bin\Debug\EntityFramework.SqlServer.dll
+U:\Year 3\Advanced Database Systems\AdvDB\FootballClass\bin\Debug\EntityFramework.xml
+U:\Year 3\Advanced Database Systems\AdvDB\FootballClass\bin\Debug\EntityFramework.SqlServer.xml
+U:\Year 3\Advanced Database Systems\AdvDB\FootballClass\obj\Debug\FootballClass.csprojResolveAssemblyReference.cache
+U:\Year 3\Advanced Database Systems\AdvDB\FootballClass\obj\Debug\FootballClass.dll
+U:\Year 3\Advanced Database Systems\AdvDB\FootballClass\obj\Debug\FootballClass.pdb
+C:\Users\p4063103\Desktop\AdvDB\FootballClass\bin\Debug\FootballClass.dll.config
+C:\Users\p4063103\Desktop\AdvDB\FootballClass\bin\Debug\FootballClass.dll
+C:\Users\p4063103\Desktop\AdvDB\FootballClass\bin\Debug\FootballClass.pdb
+C:\Users\p4063103\Desktop\AdvDB\FootballClass\bin\Debug\EntityFramework.dll
+C:\Users\p4063103\Desktop\AdvDB\FootballClass\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\p4063103\Desktop\AdvDB\FootballClass\bin\Debug\EntityFramework.xml
+C:\Users\p4063103\Desktop\AdvDB\FootballClass\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\p4063103\Desktop\AdvDB\FootballClass\obj\Debug\FootballClass.csprojResolveAssemblyReference.cache
+C:\Users\p4063103\Desktop\AdvDB\FootballClass\obj\Debug\FootballClass.dll
+C:\Users\p4063103\Desktop\AdvDB\FootballClass\obj\Debug\FootballClass.pdb

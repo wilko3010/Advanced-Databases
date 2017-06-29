@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FootballModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="Fixture_Get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FixtureID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Fixture_GetPlayersForFixture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FixtureID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Player_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlayerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Player_Merge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlayerID" Type="int" Mode="In" />
+    <Parameter Name="Firstname" Type="nvarchar" Mode="In" />
+    <Parameter Name="Surname" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOB" Type="date" Mode="In" />
+    <Parameter Name="ShirtNumber" Type="int" Mode="In" />
+    <Parameter Name="FavouredFoot" Type="nvarchar" Mode="In" />
+    <Parameter Name="PositionID" Type="int" Mode="In" />
+    <Parameter Name="RosterID" Type="int" Mode="In" />
+    <Parameter Name="SetPieceID" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Team_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TeamID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Team_Get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TeamID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Team_Merge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TeamID" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <EntityContainer Name="FootballModelStoreContainer" />
+</Schema>
